@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Cadastro de Usuário</title>
-    </head>
 <body>
     <div class="register-box">
         <h2>Criar Nova Conta</h2>
@@ -13,6 +12,7 @@
         <% } %>
 
         <form action="/register" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             
             <label for="nome"><b>Nome:</b></label>
             <input type="text" placeholder="Seu Nome Completo" name="nome" required>

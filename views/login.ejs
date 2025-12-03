@@ -5,9 +5,9 @@
     <title>Acesso ao Sistema</title>
     <style>
         :root {
-            --primary-color: #007bff; /* Azul vibrante */
-            --success-color: #28a745; /* Verde para sucesso */
-            --danger-color: #dc3545; /* Vermelho para erro */
+            --primary-color: #007bff;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
             --text-color: #343a40;
             --bg-color: #e9ecef;
             --card-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
@@ -20,7 +20,7 @@
             align-items: center; 
             height: 100vh; 
             margin: 0;
-            background-color: var(--bg-color); /* Fundo suave */
+            background-color: var(--bg-color);
             color: var(--text-color);
         }
 
@@ -29,12 +29,12 @@
             padding: 40px; 
             border-radius: 12px; 
             box-shadow: var(--card-shadow); 
-            width: 350px; /* Largura um pouco maior */
+            width: 350px;
             transition: transform 0.3s ease;
         }
 
         .login-box:hover {
-            transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
+            transform: translateY(-5px);
         }
 
         h2 {
@@ -46,7 +46,7 @@
 
         label {
             font-weight: 500;
-            display: block; /* Garante que a label fique acima do input */
+            display: block;
             margin-bottom: 5px;
         }
 
@@ -62,7 +62,7 @@
 
         input[type="email"]:focus, input[type="password"]:focus {
             border-color: var(--primary-color);
-            outline: none; /* Remove o contorno padrão */
+            outline: none;
             box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.25);
         }
 
@@ -81,7 +81,7 @@
         }
 
         button:hover {
-            background-color: #0056b3; /* Azul mais escuro no hover */
+            background-color: #0056b3;
             box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
         }
 
@@ -145,6 +145,7 @@
         <% } %>
 
         <form action="/login" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             
             <label for="email">Email:</label>
             <input type="email" placeholder="nome@ufrr.edu.br" name="email" required>
